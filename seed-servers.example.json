@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "servers": [
+    {
+      "id": "srv-example-key",
+      "name": "示例 · 密钥登录",
+      "group": "示例分组",
+      "host": "203.0.113.10",
+      "port": 22,
+      "user": "ubuntu",
+      "authType": "key",
+      "keyPath": "C:/Users/you/.ssh/id_ed25519",
+      "tags": ["demo", "key"],
+      "note": "用私钥免密登录；把 keyPath 换成你自己的私钥路径"
+    },
+    {
+      "id": "srv-example-password",
+      "name": "示例 · 密码登录",
+      "group": "示例分组",
+      "host": "10.0.0.5",
+      "port": 22,
+      "user": "root",
+      "authType": "password",
+      "passwordFrom": "ssh-log-analyzer",
+      "tags": ["demo", "password"],
+      "note": "passwordFrom 指向 ssh-log-analyzer 时，密码运行时读取、不落盘"
+    }
+  ]
+}

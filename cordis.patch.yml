@@ -1,0 +1,19 @@
+# dsh-cloud-servers bundle patch：把「云服务器」工作台插进 dsh Web bundle。
+# config 里的值就是插件默认参数，改完保存并重载插件即可生效。
+- insert:
+    - id: cloud-servers
+      name: dsh-cloud-servers
+      config:
+        enabled: true
+        # 是否允许在面板里 / 通过工具在远端执行命令
+        allowExec: true
+        # SSH 建连超时（毫秒）
+        connectTimeoutMs: 8000
+        # 采集状态（一次 shell 往返）的超时（毫秒）
+        statusTimeoutMs: 25000
+        # 执行单条远端命令的超时（毫秒）
+        execTimeoutMs: 30000
+        # 状态缓存有效期：面板轮询时不会每次都真的连服务器
+        statusTtlMs: 60000
+        # 密码类主机走 paramiko 助手脚本，这里指定解释器
+        pythonPath: python

@@ -1,0 +1,13 @@
+# 本机真实清单：含内网地址与私钥路径，永不入库
+seed-servers.json
+
+node_modules/
+__pycache__/
+*.pyc
+*.log
+.DS_Store
+Thumbs.db
+
+# 运行时数据
+storages/
+*.tmp
